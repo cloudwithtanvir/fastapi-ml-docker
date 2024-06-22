@@ -1,6 +1,5 @@
 This is README file for  FastAPI-ML-Docker project. It includes step-by-step instructions for setting up a virtual environment, installing dependencies, structuring the project, building the Docker image, and running the container.
 
-```markdown
 # FastAPI-ML-Docker
 
 This project demonstrates a FastAPI application for machine learning model inference using Docker. It allows users to upload an image and get predictions using a pre-trained model.
@@ -10,9 +9,8 @@ This project demonstrates a FastAPI application for machine learning model infer
 - [Setup Virtual Environment](#setup-virtual-environment)
 - [Install Dependencies](#install-dependencies)
 - [Running the Application Locally](#running-the-application-locally)
-- [Docker Setup](#docker-setup)
-- [Build Docker Image](#build-docker-image)
-- [Run Docker Container](#run-docker-container)
+- [Docker init](#docker-init)
+- [Run using Docker](#run-using-docker-compose)
 
 ## Project Structure
 ```
@@ -70,20 +68,8 @@ torch
 Pillow
 ```
 
-### Run Script
-Ensure your `run.sh` script includes the following content:
-```bash
-#!/bin/bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-```
-Make sure `run.sh` is executable:
-```bash
-chmod +x run.sh
-```
 
-
-
-## STEP: Run docker init
+## docker-init
 
 
 ```bash
@@ -93,7 +79,7 @@ STEP: Select Python image and use this command during docker init
 ```bash
 CMD uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
-## Run using Docker
+## run-using-docker-compose
 To build the Docker image, run the following command in the root directory:
 ```bash
 docker compose up --build
