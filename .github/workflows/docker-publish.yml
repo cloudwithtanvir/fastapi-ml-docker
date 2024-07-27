@@ -28,9 +28,9 @@ jobs:
     - name: Build Docker image
       run: docker-compose build
     - name: To View Docker image
-      run: docker ps -a
+      run: docker images
     - name: Tag Docker image
-      run: docker tag server:latest ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-ml-docker:latest
+      run: docker tag fastapi-ml-docker_server:latest ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-ml-docker:latest
 
     - name: Push Docker image
       run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi-ml-docker:latest
